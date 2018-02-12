@@ -45,6 +45,8 @@ class User extends Model {
     ];
     /**
      * when save attributes to database ,columns only defined in the defaults will save to database
+     * default is false and we do nothing when the column is not in the database and this will throw 
+     * a exception when you using mysql or the data will saving to the database when you using mongo
      */
     protected $columnStrict = true;
 }
