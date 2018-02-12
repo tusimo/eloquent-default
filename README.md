@@ -49,6 +49,14 @@ class User extends Model {
      * a exception when you using mysql or the data will saving to the database when you using mongo
      */
     protected $columnStrict = true;
+    
+    /**
+     *Also you can define a method as `get*Default` to set a default value
+     */
+    preotected function getCustomDefault($custom)
+    {
+        return \Auth::isAdmin ? 'admin' : 'user';
+    }
 }
 ```
 
