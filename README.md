@@ -33,10 +33,14 @@ use Tusimo\EloquentDefault\DefaultTrait;
 class User extends Model {
     use DefaultTrait;
     
+    /**
+     * define the columns the table has 
+     * and define the default value saving to the database when attributes not set the column
+     */
     protected $defaults = [
         '_id',
-        'gender' => self::GENDER_MALE,
-        'status' => self::STATUS_NORMAL,
+        'gender' => 1,
+        'status' => 0,
         'deleted_at' => null,
     ];
     /**
@@ -49,5 +53,3 @@ class User extends Model {
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
-
-[link-contributors]: ../../contributors
